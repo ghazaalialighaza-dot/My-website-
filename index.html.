@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bareeze by Ghaza | Luxury Women's Clothing</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Montserrat', sans-serif; background-color: #fff; color: #111; line-height: 1.6; font-size: 16px; }
+    a { color: #b9975b; text-decoration: none; font-weight: 600; transition: color 0.3s ease; }
+    a:hover { color: #87753a; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
+
+    header { display: flex; justify-content: space-between; align-items: center; padding: 20px 40px; border-bottom: 1px solid #eee; position: sticky; top: 0; background: #fff; z-index: 100; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+    .logo { max-width: 180px; height: auto; display: block; }
+    nav { display: flex; gap: 35px; font-size: 1rem; }
+
+    .hero { text-align: center; padding: 120px 20px 140px; font-family: 'Playfair Display', serif; color: #1a1a1a; position: relative; }
+    .hero h1 { font-size: 3.8rem; font-weight: 700; letter-spacing: 6px; margin-bottom: 20px; color: #b9975b; text-transform: uppercase; }
+    .hero p { max-width: 600px; margin: 0 auto 40px; font-size: 1.25rem; color: #555; }
+    .btn-shop { background-color: #b9975b; color: #fff; font-weight: 600; font-size: 1.2rem; border: none; padding: 15px 50px; cursor: pointer; border-radius: 50px; box-shadow: 0 5px 15px rgba(185,151,91,0.4); transition: background-color 0.3s ease, box-shadow 0.3s ease; letter-spacing: 2px; }
+    .btn-shop:hover { background-color: #8c7638; box-shadow: 0 8px 20px rgba(140,118,56,0.6); }
+
+    #about { padding: 80px 20px; text-align: center; border-top: 1px solid #eee; border-bottom: 1px solid #eee; max-width: 850px; margin: auto; color: #333; }
+    #about h2 { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 2.8rem; color: #b9975b; margin-bottom: 25px; letter-spacing: 2px; }
+    #about p { font-size: 1.15rem; line-height: 1.7; color: #555; }
+
+    #collections { padding: 100px 20px; }
+    #collections h2 { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 2.8rem; color: #b9975b; margin-bottom: 60px; text-align: center; letter-spacing: 2px; }
+    .collection-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; max-width: 1200px; margin: auto; }
+    .collection-item { background: #fff; border: 2px solid #f3e9cf; border-radius: 12px; overflow: hidden; box-shadow: 0 12px 22px rgba(185,151,91,0.1); transition: transform 0.4s ease, box-shadow 0.4s ease; cursor: pointer; }
+    .collection-item:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(185,151,91,0.3); }
+    .collection-item img { width: 100%; height: 380px; object-fit: cover; border-bottom: 1px solid #f3e9cf; transition: transform 0.5s ease; }
+    .collection-item:hover img { transform: scale(1.05); }
+    .collection-info { padding: 22px 25px; text-align: center; }
+    .collection-info h3 { color: #b9975b; font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.5rem; margin-bottom: 12px; letter-spacing: 1.5px; text-transform: uppercase; }
+    .collection-info p { color: #6b6b6b; font-size: 1rem; font-weight: 400; }
+
+    #contact { background: #fefcf9; padding: 100px 20px; max-width: 600px; margin: 0 auto 60px; border-radius: 12px; box-shadow: 0 10px 30px rgba(185, 151, 91, 0.12); }
+    #contact h2 { text-align: center; font-family: 'Playfair Display', serif; font-weight: 700; font-size: 2.8rem; color: #b9975b; margin-bottom: 35px; letter-spacing: 2px; }
+    form { display: flex; flex-direction: column; gap: 20px; }
+    label { font-weight: 600; color: #444; margin-bottom: 6px; letter-spacing: 0.5px; }
+    input, textarea { padding: 15px 18px; border: 2px solid #d9d5c5; border-radius: 10px; font-size: 1rem; background-color: #fff; color: #333; resize: vertical; transition: border-color 0.3s ease, box-shadow 0.3s ease; }
+    input:focus, textarea:focus { outline: none; border-color: #b9975b; box-shadow: 0 0 12px rgba(185,151,91,0.5); }
+    button { background-color: #b9975b; color: #fff; border: none; padding: 18px; font-size: 1.2rem; border-radius: 50px; font-weight: 600; cursor: pointer; letter-spacing: 2px; transition: background-color 0.3s ease, box-shadow 0.3s ease; margin-top: 10px; box-shadow: 0 6px 20px rgba(185,151,91,0.4); }
+    button:hover { background-color: #8c7638; box-shadow: 0 8px 30px rgba(140,118,56,0.7); }
+
+    footer { padding: 25px 20px; text-align: center; font-family: 'Montserrat', sans-serif; font-weight: 500; color: #777; border-top: 1px solid #eee; letter-spacing: 0.5px; font-size: 0.9rem; }
+
+    @media (max-width: 768px) { .hero h1 { font-size: 3rem; } .collection-item img { height: 300px; } #contact { padding: 60px 15px; } }
+    @media (max-width: 480px) { header { flex-direction: column; gap: 15px; } nav { gap: 20px; flex-wrap: wrap; justify-content: center; } .hero h1 { font-size: 2.4rem; } }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <!-- Logo -->
+    <img src="https://i.ibb.co/TD2FpggQ/file-000000003b4c71fa9811e7725773f25b.png" alt="Bareeze by Ghaza Logo" class="logo">
+
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#collections">Collections</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section id="home" class="hero">
+    <h1>Bareeze by Ghaza</h1>
+    <p>Elegance and comfort in every stitch. Discover our exclusive women's clothing collections curated especially for you.</p>
+    <button class="btn-shop" onclick="document.getElementById('collections').scrollIntoView({ behavior: 'smooth' })">Shop Now</button>
+  </section>
+
+  <section id="about" class="container">
+    <h2>About Us</h2>
+    <p>Bareeze by Ghaza is committed to bringing you the finest quality women's apparel. From traditional designs to contemporary fashion, our pieces are crafted with passion, care, and the perfect blend of style and comfort.</p>
+  </section>
+
+  <section id="collections" class="container">
+    <h2>Our Collections</h2>
+    <div class="collection-grid">
+      <article class="collection-item">
+        <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=800&q=80" alt="Elegant Dress">
+        <div class="collection-info">
+          <h3>Elegant Dresses</h3>
+          <p>Chic and graceful dresses perfect for every occasion.</p>
+        </div>
+      </article>
+      <article class="collection-item">
+        <img src="https://images.unsplash.com/photo-1530845645362-c3163b5eed91?auto=format&fit=crop&w=800&q=80" alt="Traditional Wear">
+        <div class="collection-info">
+          <h3>Traditional Wear</h3>
+          <p>Classic designs with modern fabrics and comfort.</p>
+        </div>
+      </article>
+      <article class="collection-item">
+        <img src="https://images.unsplash.com/photo-1501959915551-c9372f5b0fbc?auto=format&fit=crop&w=800&q=80" alt="Casual Collection">
+        <div class="collection-info">
+          <h3>Casual Collection</h3>
+          <p>Relaxed and stylish wear for your everyday moments.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <form onsubmit="alert('Thank you for contacting Bareeze by Ghaza! We will get back to you soon.'); return false;">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" placeholder="Your Name" required>
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="Your Email" required>
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <footer>
+    &copy; 2024 Bareeze by Ghaza. All rights reserved.
+  </footer>
+
+</body>
+</html>
